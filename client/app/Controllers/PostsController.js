@@ -28,7 +28,6 @@ export class PostsController {
         imgUrl: form.imgUrl.value,
         question: form.question.value,
         content: form.content.value,
-        likes: form.likes.value,
         alliance: form.alliance.value
       }
       form.reset()
