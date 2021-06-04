@@ -29,25 +29,35 @@
     </nav>
   </header>
   <main id="app">
-    <div class="container-fluid">
-      <div class="row my-3">
-        <div class="col-5">
-          <div class="card p-2 skeleton-loader">
-            <div class="card-title p-2">
-              <div class="d-flex align-items-center">
-                <div class="skeleton-loader avatar"></div>
-                <div class="skeleton-loader text mx-2"></div>
-              </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="card m-2 col-8">
+          <form class="d-flex flex-column" onsubmit="app.postsController.createPost(event)">
+            <input type="text" id="imgUrl">
+            <input type="text" id="question">
+            <textarea name="" id="content" cols="30" rows="6"></textarea>
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" id="customSwitch1" name="alliance">
+              <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
             </div>
-            <div class="card-body border-top">
-              <div class="skeleton-loader text block"></div>
-              <div class="skeleton-loader text block"></div>
-              <div class="skeleton-loader text"></div>
-            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="row  card">
+        <div class="row justify-content-between">
+          <div class="col d-flex justify-content-start"><img src="" alt="hero"></div>
+          <div class="col d-flex justify-content-center">
+            <h4>Text</h4>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <button onclick=app.postController.votePost(true)>+</button>
+            <button onclick=app.postController.votePost(false)>-</button>
           </div>
         </div>
       </div>
     </div>
+
   </main>
   <footer class="container-fluid bg-dark text-light">
     <div class="row text-center">
