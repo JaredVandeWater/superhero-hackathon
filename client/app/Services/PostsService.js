@@ -15,7 +15,7 @@ class PostsService {
 
   async createPost(postData) {
     try {
-      const res = await api.post('/posts', ProxyState.posts)
+      const res = await api.post('/api/posts', ProxyState.posts)
       console.log('created post', res)
       //   ProxyState.post = res.data
       ProxyState.posts = [...ProxyState.posts, new Post(postData)]
