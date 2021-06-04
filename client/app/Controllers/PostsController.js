@@ -6,17 +6,23 @@ function _draw() {
   ProxyState.posts.forEach(p => {
     template += p.Template
   })
+  document.getElementById('postsHTML').innerHTML = template
 }
 
 export class PostsController {
   constructor() {
+    this.getPosts()
     ProxyState.on('posts', _draw)
     console.log('Posts controller')
   }
 
   getPosts() {
-    console.log('getposts')
-    postsService.getPosts()
+    try {
+      console.log('getposts')
+      postsService.getPosts()
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   createPost(event) {
@@ -33,7 +39,7 @@ export class PostsController {
       form.reset()
       postsService.createPost(newPost)
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 }

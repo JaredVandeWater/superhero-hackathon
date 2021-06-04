@@ -3,6 +3,6 @@ export class Comment {
     this.creatorId = data.creatorId
     this.postId = data.postId
     this.content = data.content
-    this.likes = data.likes || 0
+    this.likes = data.likes
   }
 }

@@ -1,6 +1,5 @@
 export class Post {
   constructor(data) {
-    this.creatorId = data.creatorId
     this.imgUrl = data.imgUrl
     this.question = data.question
     this.content = data.content
