@@ -14,16 +14,22 @@ export class PostsController {
     console.log('Posts controller')
   }
 
+  getPosts() {
+    console.log('getposts')
+    postsService.getPosts()
+  }
+
   createPost(event) {
     try {
       event.preventDefault()
       console.log('event created')
       const form = event.target
       const newPost = {
-        alliance: form.alliance.value,
         imgUrl: form.imgUrl.value,
         question: form.question.value,
-        content: form.content.value
+        content: form.content.value,
+        // likes: form.likes.value,
+        alliance: form.alliance.value
       }
       form.reset()
       postsService.createPost(newPost)
