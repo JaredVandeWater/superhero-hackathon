@@ -8,7 +8,9 @@ class AppState extends EventEmitter {
   // NOTE //
   /** @type {Post[]} */
 
-    posts = []
+  posts = []
+
+  comments = []
   user = {}
   account = {}
   /** @type {import('./Models/Value').Value[]} */

@@ -6,6 +6,10 @@ class CommentsService {
     return await dbContext.Comments.findById(id)
   }
 
+  async getCommentsByPostId(postId) {
+    return await dbContext.Comments.find({ postId }).populate('comments', 'id')
+  }
+
   async create(commentData) {
     if (!commentData) { throw new BadRequest('Invalid comment data') }
     return await dbContext.Comments.create(commentData)
