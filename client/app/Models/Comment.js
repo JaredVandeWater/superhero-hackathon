@@ -5,4 +5,10 @@ export class Comment {
     this.content = data.content
     this.likes = data.likes
   }
+
+  get Template() {
+    return /* html */`
+    <p>${this.content}</p>
+    `
+  }
 }
