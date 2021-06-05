@@ -42,4 +42,13 @@ export class PostsController {
       console.error(error)
     }
   }
+
+  showContent(id) {
+    const post = ProxyState.posts.find(p => p.id === id)
+    document.getElementById('exampleModalLabel').innerText = post.question
+    console.log(ProxyState.posts.find(p => p.id === id))
+
+    document.getElementById('modalbody').innerText = post.content
+    document.getElementById('addcomment').setAttribute('onSubmit', `app.commentsController.addComment(event, "${post.id}" `)
+  }
 }
